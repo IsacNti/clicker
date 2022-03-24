@@ -38,6 +38,7 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    color: burlywood;
 }
 
 /* A elements that don't have a class get default styles */
@@ -89,7 +90,7 @@ select {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #f8f8f8;
+    background-color: burlywood;
     color: #121212;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -138,11 +139,13 @@ footer {
    }
    .game-hud {
         flex-direction: column-reverse;
+        
    }
    .game-button {
        width: 100%;
        display: flex;
        justify-content: center;
+       
    }
 }
 /* centrera bilden */
@@ -153,6 +156,7 @@ footer {
 }
 .game {
     margin-top: 2rem;
+    
 }
 
 /* flex och space between ordnar layouten för speldata och knappen på desktop */
@@ -171,6 +175,7 @@ footer {
     width: 8rem;
     height: 8rem;
     font-size: 2rem;
+    background-color: chocolate;
 }
 
 /* #msgbox är elementet som visar sidans toasts, popupmeddelanden
