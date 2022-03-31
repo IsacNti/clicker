@@ -73,7 +73,7 @@ function step(timestamp) {
     // på samma sätt kan du även dölja uppgraderingar som inte kan köpas
     if (moneyPerClick == 10 && !achievementTest) {
         achievementTest = true;
-        message('Du har hittat en FOSSIL!', 'achievement');
+        message('Körv mästare!', 'achievement');
     }
 
     window.requestAnimationFrame(step);
@@ -107,20 +107,24 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Steck spade',
+        name: 'stekspade', 
+        class: 'stek',
         cost: 10,
-        amount: 1,
+        clicks: 1,
     },
     {
-        name: 'Ny grill',
+        name: '..................... Ny grill',
+        class: 'grill',
         cost: 100,
         amount: 10,
     },
     {
-        name: 'Anställ en personal',
-        cost: 1000,
-        amount: 100,
+        name: 'Ny personal',
+        class: 'personal',
+        cost: 2500,
+        amount: 50,
     },
+
 ];
 
 /* createCard är en funktion som tar ett upgrade objekt som parameter och skapar
@@ -144,23 +148,27 @@ upgrades = [
 function createCard(upgrade) {
     const card = document.createElement('div');
     card.classList.add('card');
+    card.classList.add(upgrade.class);
     const header = document.createElement('p');
     header.classList.add('title');
     const cost = document.createElement('p');
-
-    header.textContent = `${upgrade.name}, +${upgrade.amount} per sekund.`;
-    cost.textContent = `Köp för ${upgrade.cost} Körvar.`;
-
+    if (upgrade.amount) {
+        header.textContent = `${upgrade.name}, +${upgrade.amount} körv/sekund.`;
+    } else {
+        header.textContent = `${upgrade.name}, +${upgrade.clicks} körv/Click.`;
+    }
+    cost.textContent = `Buy For ${upgrade.cost} körv.`;
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             moneyPerClick++;
             money -= upgrade.cost;
-            upgrade.cost *= 1.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' Körvar';
-            moneyPerSecond += upgrade.amount;
-            message('Grattis du har lockat till dig fler besökare!', 'success');
+            upgrade.cost *= 2;
+            cost.textContent = 'Buy For ' + upgrade.cost + ' körv';
+            moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
+            moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
+            message('Congratulations, you feel stronger!', 'success');
         } else {
-            message('Du har inte råd.', 'warning');
+            message('You are broke.', 'warning');
         }
     });
 

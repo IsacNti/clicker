@@ -173,9 +173,10 @@ footer {
 /* för spelelementet används #id som selektor för att skapa css reglerna */
 #click {
     width: 8rem;
-    height: 8rem;
+    height: 5rem;
     font-size: 2rem;
-    background-color: chocolate;
+    background-color: transparent;
+    border: none;
 }
 
 /* #msgbox är elementet som visar sidans toasts, popupmeddelanden
@@ -221,6 +222,7 @@ footer {
     border: 1px solid #646464;
     margin: 0.5rem 0;
     padding: 1rem 0.5rem;
+    background-color: chocolate;
 }
 
 .card:hover {
@@ -231,4 +233,19 @@ footer {
  */
 .title {
     font-weight: 600;
+}
+.stek{
+    background-image: url(../img/bbq-g49a27141f_640.png);
+    background-repeat: no-repeat;
+    background-size: initial;
+}
+.grill{
+    background-image: url(../img/grill.png);
+    background-repeat: no-repeat;
+    background-size: initial;
+}
+.personal{
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: initial;
 }
