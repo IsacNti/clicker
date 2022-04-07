@@ -9,36 +9,38 @@
     <title>Clicker körv</title>
 </head>
 
-<body>
+<body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
     <main class="container">
         <header>
             <div class="img-container">
-                <img src="img/körv-1.png" alt="Fossil">
+                <img src="img/körv-1.png" alt="Körv">
             </div>
-            <h1>Körv kiosk </h1>
-            <p>Du har blivit anstäld till en körv kiosk. Ditt jobb är att:</p>
-            <p>Fram ta nya hjälpmedel eller få nya arbetare. Så du kan servera så många besökare som möjligt.</p>
-            <p>Hur många besökare kan du få?</p>
+            <div class="besk">
+                <h1>Körv kiosk </h1>
+                <p>Du har blivit anstäld till en körv kiosk. Ditt jobb är att:</p>
+                <p>Fram ta nya hjälpmedel eller få nya arbetare. Så du kan servera så många besökare som möjligt.</p>
+                <p>Hur många besökare kan du få?</p>
+            </div>
         </header>
         <section class="game">
             <div class="game-hud">
                 <ul class="game-currency">
-                    <li class="item">
-                        <h1>Körvar: <span id="money"></span></h1>
+                    <li class="item-körv">
+                        <h2>Körvar: <span id="money"></span></h2>
                     </li>
                     <li class="item">
-                        <h1>Hjälpmedel/arbetskraft: <span id="mps"></span></h1>
+                        <h2>Hjälpmedel/arbetskraft: <span id="mps"></span></h2>
                     </li>
                     <li class="item">
-                        <h1>Besökare: <span id="mpc"></span></h1>
+                        <h2>Besökare: <span id="mpc"></span></h2>
                     </li>
                 </ul>
                 <div class="game-button">
-                    <button id="click"><img src="img/grill-ga9fb1b0b8_640.jpg" alt=""> </button>
+                    <button id="click"><img src="img/grill-korv.png" alt=""> </button>
                 </div>
             </div>
             <div class="w-100">
-                <h1>Uppgraderingar</h1>
+                <h2>Uppgraderingar</h2>
                 <div id="upgradelist"></div>
             </div>
             </div>

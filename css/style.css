@@ -90,9 +90,11 @@ select {
 body {
     display: flex;
     flex-direction: column;
-    background-color: burlywood;
-    color: #121212;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url(../img/shop-g35dcc41f1_1920.jpg);
+    background-size: cover;
+    color: #221717;
+    font-family: 'Rubik Moonrocks', cursive;;
+    
 }
 /* För att göra footern sticky så har vi flex på bodyn och då räcker det med 
  * margin-top auto här.
@@ -139,7 +141,6 @@ footer {
    }
    .game-hud {
         flex-direction: column-reverse;
-        
    }
    .game-button {
        width: 100%;
@@ -163,6 +164,7 @@ footer {
 .game-hud {
     display: flex;
     justify-content: space-between;
+    background-color: chocolate;
 }
 
 .game-currency {
@@ -210,6 +212,11 @@ footer {
     color: #121212;
     background-color: rebeccapurple;
 }
+.achievement2{
+    background-image: url(../img/liten-amongus-korv.png);
+    color: #121212;
+    background-color: chocolate;
+}
 
 /* dessa kort används för spelets uppgraderingar 
  * lägg märke till padding och margin för att ge elementen lite luft och 
@@ -248,4 +255,7 @@ footer {
     background-image: url();
     background-repeat: no-repeat;
     background-size: initial;
+}
+.besk{
+    background-color: chocolate;
 }

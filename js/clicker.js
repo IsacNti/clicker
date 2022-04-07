@@ -27,6 +27,7 @@ let moneyPerSecond = 0;
 let last = 0;
 
 let achievementTest = false;
+let achievementTest2 = false;
 
 /* Med ett valt element, som knappen i detta fall så kan vi skapa listeners
  * med addEventListener så kan vi lyssna på ett specifikt event på ett html-element
@@ -75,6 +76,10 @@ function step(timestamp) {
         achievementTest = true;
         message('Körv mästare!', 'achievement');
     }
+    if (moneyPerClick >= 5 && !achievementTest2) {
+        achievementTest2 = true;
+        message('', 'achievement2');
+    }
 
     window.requestAnimationFrame(step);
 }
@@ -110,10 +115,10 @@ upgrades = [
         name: 'stekspade', 
         class: 'stek',
         cost: 10,
-        clicks: 1,
+        amount: 1,
     },
     {
-        name: '..................... Ny grill',
+        name: '............ Ny grill',
         class: 'grill',
         cost: 100,
         amount: 10,
@@ -157,18 +162,18 @@ function createCard(upgrade) {
     } else {
         header.textContent = `${upgrade.name}, +${upgrade.clicks} körv/Click.`;
     }
-    cost.textContent = `Buy For ${upgrade.cost} körv.`;
+    cost.textContent = `Köp För ${upgrade.cost} körv.`;
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             moneyPerClick++;
             money -= upgrade.cost;
-            upgrade.cost *= 2;
-            cost.textContent = 'Buy For ' + upgrade.cost + ' körv';
+            upgrade.cost *= 1.5;
+            cost.textContent = 'Buy For ' + Math.round(upgrade.cost) + ' körv';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
-            message('Congratulations, you feel stronger!', 'success');
+            message('Mer KÖRV!', 'success');
         } else {
-            message('You are broke.', 'warning');
+            message('För litte körvar.', 'warning');
         }
     });
 
